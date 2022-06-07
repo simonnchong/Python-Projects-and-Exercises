@@ -1,0 +1,17 @@
+[[package]]
+name = "logo"
+version = "1.0.0"
+description = ""
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "25e62697c36eede5648df592a5522298d9e2f11784d27167cf6241e63d6d9f49"
+
+[metadata.files]
+logo = [
+    {file = "logo-1.0.0-py3-none-any.whl", hash = "sha256:77fdcc292c40a50bf74946a8fddb990c6f3a1437c91822786f48a46c06e779fc"},
+]
