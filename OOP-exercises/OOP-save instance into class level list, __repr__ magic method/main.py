@@ -30,7 +30,7 @@ class Item:
     def apply_discount(self):
         self.price = self.price * self.pay_rate # if no instance level pay_rate being assigned, it will get it from class level, line 2
         
-    def __repr__(self): # a loop => representing magic method, return all the existing instances in string form instead of like the result in line 44
+    def __repr__(self): # an iterate => representing magic method, return all the existing instances in string form instead of like the result in line 44
         return f"...line 34...Item('{self.name}', {self.price}, {self.quantity}"
 
 
