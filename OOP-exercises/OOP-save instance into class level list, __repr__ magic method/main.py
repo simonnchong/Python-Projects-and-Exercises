@@ -1,6 +1,9 @@
 class Item:
     pay_rate = 0.8 # The pay rate after 20% discount, this is a class attribute that not belong to any instance/object
                    # but still it still can be accessed via an instance
+    all_items = []
+
+
     def __init__(self, name: str, price: float, quantity = 0): 
         # self is the created instance itself like in line 27 => item1
         # "name: str" is to set the datatype of parameter to avoid int as the argument input mistake
@@ -15,34 +18,33 @@ class Item:
         self.name = name
         self.price = price
         self.quantity =  quantity
-        
+
+        # adding all the item into a class level list
+        Item.all_items.append(self)
+
+
     def calculated_total_price(self):
         return self.price * self.quantity
     
+
     def apply_discount(self):
-        self.price = self.price * self.pay_rate # instead od using "Item.pay_rate", since item2 has its own discount rate, 
-                                                # so we can use self here, item1 will retrieve the pay_rate from class level because it doesn't has 1
+        self.price = self.price * self.pay_rate # if no instance level pay_rate being assigned, it will get it from class level, line 2
+        
+    def __repr__(self): # a loop => representing magic method, return all the existing instances in string form instead of like the result in line 44
+        return f"...line 34...Item('{self.name}', {self.price}, {self.quantity}"
 
-item1 = Item("Phone", 100, 10)
 
-# use this magic method to debug
-# print all attribute in class level
-print(Item.__dict__)
-# print all attribute in instance level
-print(item1.__dict__)
+item1 = Item("Phone", 100, 1)
+item2 = Item("Laptop", 1000, 3)
+item3 = Item("Cable", 10, 5)
+item4 = Item("Mouse", 50, 5)
+item5 = Item("Keyboard", 75, 5)
 
-# to access class level attribute
-print(Item.pay_rate)
-# item1 is still able to access class attribute when they cannot find their own attribute in their own instance
-print(item1.pay_rate)
+# check if all items instance have been passed into the list, line 23
+print(Item.all_items)
 
-print(item1.name, "Before discount RM", item1.calculated_total_price())
-item1.apply_discount()
-print(item1.name, "After discounted RM", item1.calculated_total_price())
-
-# let say you have a different discount rate for item2, so we can specify the pay_rate for its own instance only
-item2 = Item("Laptop", 400, 2)
-item2.pay_rate = 0.7
-print(item2.name, "Before discount RM", item2.calculated_total_price())
-item2.apply_discount()
-print(item2.name, "After discounted RM", item2.calculated_total_price())
+# print all instance attribute from all_items list that has been assigned in line 21
+for instance in Item.all_items:
+    print(f"\n----Item name: {instance.name}")
+    print(f"    Item price: {instance.price}")
+    print(f"    Item quantity: {instance.quantity}")

@@ -5,7 +5,7 @@ class Item:
         # "quantity = 0" is also to set the datatype and initialize the parameter value at the same time
 
         # in order to avoid unwanted data, e.g: a negative value being passed into parameter price and quantity, 
-        # use "assert" to specify the rule before it get processed
+        # use "assert" to do a data validation before it get processed
         # the string is the error message will be show if unwanted data being passed into this class constructor
         assert price >= 0, f"Price {price} cannot be negative value"
         assert quantity >= 0, f"Quantity {quantity} cannot be negative value"
