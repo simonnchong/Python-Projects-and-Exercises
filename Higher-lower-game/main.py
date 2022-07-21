@@ -15,9 +15,9 @@ incorrect_message = ""
 
 celebrity_A = choice(data)
 celebrity_A_name = celebrity_A["name"]
-celebrity_A_follower_count = celebrity_A["follower_count"]
+celebrity_A_follower_count = celebrity_A["follower_counts"]
 celebrity_A_description = celebrity_A["description"]
-celebrity_A_country = celebrity_A["country"]
+celebrity_A_country = celebrity_A["countries"]
 
 is_correct_answer = True
 while is_correct_answer:
@@ -54,4 +54,4 @@ while is_correct_answer:
         incorrect_message = f"Sorry, that's wrong. Final score: {score}"
         system("cls")
         print(logo)
-        print(incorrect_message)
+        print(incorrect_message)    
