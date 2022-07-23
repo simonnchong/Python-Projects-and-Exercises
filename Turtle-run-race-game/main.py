@@ -1,14 +1,14 @@
-from turtle import Turtle, Screen, done, title
+from turtle import Turtle, Screen, done
 from random import randint
 from tkinter import messagebox
 
 screen = Screen()
-title("Turtle racing game! Make a guess what color of turtle will win in a run!") # set the window name
+screen.title("Turtle racing game! Make a guess what color of turtle will win in a run!") # set the window name
 
 is_race_start = False
 
-turtle_colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "black"]
-starting_y_position = [170, 120, 70, 25, -25, -70, -120, -170]
+turtle_colors = ("red", "orange", "yellow", "green", "blue", "purple", "pink", "black")
+starting_y_position = (170, 120, 70, 25, -25, -70, -120, -170)
 
 screen.setup(width = 1000, height = 800) # setup the initial window screen size, keyword arguments here
 
