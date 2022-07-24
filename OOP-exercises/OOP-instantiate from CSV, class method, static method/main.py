@@ -14,7 +14,7 @@ class Item:
 
         # in order to avoid unwanted data, e.g: a negative value being passed into parameter price and quantity, 
         # use "assert" to do a data validation before it get processed
-        # the string is the error message will be show if unwanted data being passed into this class constructor
+        # the fstring is the error message will be show if unwanted data being passed into this class constructor
         assert price >= 0, f"Price {price} cannot be negative value"
         assert quantity >= 0, f"Quantity {quantity} cannot be negative value"
 
@@ -26,7 +26,7 @@ class Item:
         Item.all_items.append(self)
 
 
-    def calculated_total_price(self):
+    def calculated_total_price(self):   # calculate the price for each item
         return self.price * self.quantity
     
 
@@ -34,9 +34,8 @@ class Item:
         self.price = self.price * self.pay_rate # if no instance level pay_rate being assigned, it will get it from class level, line 5
 
     
-    #* use class method because we have a structured dataset (csv, JSON, yaml) instead of creating every instance by calling the constructor 
-    # we pass the data from outside of the file instead of passing an instance, that's why no self as parameter but clc => class
-    # call its own constructor in class method 
+    #* use class method because we have a structured dataset (csv, JSON, yaml) and call the constructor in class it self
+    # we pass the data from outside of the file instead of passing an instance, that's why no self as parameter but cls => classod 
     @classmethod
     def instantiate_from_csv(cls):
         # here will be using csv library 
@@ -58,19 +57,19 @@ class Item:
         # eg: 10.0, 5.0
         if isinstance(num, float): # check if the num is a float data type
             return num.is_integer() # return True if the float value is a whole number like 10.0, 5.0 instead of 10.1, 10.2.....
-        elif isinstance(num, int):
+        elif isinstance(num, int): # check if the num is a int data type
             return True
         else:
             return False
 
 
-    def __repr__(self): # an iterate => representing magic method, return all the existing instances in string form instead of an object
+    def __repr__(self): # an iterate => a "representing" in magic methods, return all the existing instances in string form instead of an object
         return f"Item('{self.name}', {self.price}, {self.quantity})\n"
 
 Item.instantiate_from_csv()
 print(Item.all_items) # without __repr__, we only can see the object form in console because we append entire object into the list
 
-print(Item.is_an_integer(7.4)) # access @staticmethod in line 50
+print(Item.is_an_integer(7.4)) # access @staticmethod in line 55
 
 #! you can call the class method and static method from an instance, but there is no reason to do so, e.g:
 
