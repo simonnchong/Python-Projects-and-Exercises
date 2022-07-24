@@ -35,13 +35,13 @@ class Item:
 
     
     #* use class method because we have a structured dataset (csv, JSON, yaml) and call the constructor in class it self
-    # we pass the data from outside of the file instead of passing an instance, that's why no self as parameter but cls => classod 
+    # we pass the data from outside of the file instead of passing an instance, that's why no self as parameter but cls => class
     @classmethod
     def instantiate_from_csv(cls):
         # here will be using csv library 
         with open('item.csv', 'r') as file: #* open(file_name, permission)
-            reader = csv.DictReader(file)   # get the data in an object
-            items = list(reader)    # convert into a list and save into items variable
+            reader = csv.DictReader(file)   # get the data from the file and save into an object
+            items = list(reader)    # convert the object into a list and save into a variable
         
         for item in items:
             #? print(item) # only see a bunch of dictionary instead of a list because it has been iterated
