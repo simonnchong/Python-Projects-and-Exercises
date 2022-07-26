@@ -25,7 +25,6 @@ class Item:
         # adding all the item into a class level list
         Item.all_items.append(self)
 
-
     def calculated_total_price(self):   # calculate the price for each item
         return self.price * self.quantity
     
