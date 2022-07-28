@@ -55,6 +55,7 @@ class Snake:
             self.head.setheading(RIGHT)
 
     def reset(self):
+        for segment in self.snake_segments:
+            segment.goto(9999, 9999) # set the snake to outside of screen once it dies
         self.snake_segments.clear()
-        self.create_snake()
-        self.head = self.snake_segments[0]
+        self.__init__()
