@@ -15,7 +15,7 @@ class Player(Turtle):
         self.go_to_start()
         self.setheading(90)
 
-
+    # define the key function control by AWSD
     def move_forward(self):
         self.forward(MOVE_DISTANCE)
 
@@ -28,9 +28,11 @@ class Player(Turtle):
     def move_backward(self):
         self.backward(MOVE_DISTANCE)
 
+    # reset the turtle position to initial position when it is reaches the destination
     def go_to_start(self):
         self.goto(STARTING_POSITION)
 
+    # check if the turtle reaches the destination
     def is_reach_finish_line(self):
         if self.ycor() > FINISH_LINE_Y:
             return True
