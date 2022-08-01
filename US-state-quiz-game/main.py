@@ -21,14 +21,17 @@ while len(guessed_states) < 50: # keep repeating the quiz prompt if not all corr
                                     prompt = "What's another state's name").title() # prompt an input box to let user input state name
     # record the states that not get guessed correct into a csv file
     if answer_state == "Exit":
-        missing_states = []
-        for state in all_states:  # iterate item in the all states list
-            if state not in guessed_states: # iterate every state in the list and check if the state is in the guessed correct list
-                missing_states.append(state) # if not, add the state name into the missing state list
+        # missing_states = []
+        # for state in all_states:  # iterate item in the all states list
+        #     if state not in guessed_states: # iterate every state in the list and check if the state is in the guessed correct list
+        #         missing_states.append(state) # if not, add the state name into the missing state list
+        #* write the above codes into a list comprehension
+        missing_states = [state for state in all_states if state not in guessed_states]
         missing_state_dataframe = pd.DataFrame(missing_states) # generate a dataframe/dataset
         missing_state_dataframe.to_csv("States_that_not_guessed_correct.csv") # convert and save into a csv file
         
         break
+    
     if answer_state in all_states:
         guessed_states.append(answer_state) # add the correct state into a list
         state_name_pen = turtle.Turtle() # create the turtle object for writing the state name
