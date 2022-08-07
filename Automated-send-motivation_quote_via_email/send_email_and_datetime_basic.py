@@ -57,6 +57,9 @@ print(now.month) # integer type today is August
 print(now.day) # integer type, today is 7th
 # 7
 
+print(now.date()) # integer type, today is 7th
+# 2022-08-07
+
 print(now.time())
 # 21:44:10.336723
 
