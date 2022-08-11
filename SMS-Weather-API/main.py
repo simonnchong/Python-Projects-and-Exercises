@@ -1,4 +1,4 @@
-# this is an application to send the current weather status via SMS
+# this is an application to send SMS if there is raining possibility in next 12 hours
 
 import requests
 from twilio.rest import Client
