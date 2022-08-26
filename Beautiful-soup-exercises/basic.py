@@ -192,7 +192,7 @@ print(soup.find(id="testing"))
 print(soup.find(name="h1", id="name"))
 # <h1 id="name">Simon Chong</h1>
 
-print(soup.find_all(name="h3", class_="heading")) # in order to avoid class reserve keyword, it is `class_` instead
+print(soup.find(name="h3", class_="heading")) # in order to avoid class reserve keyword, it is `class_` instead
 # <h3 class="heading">Books and Teaching</h3>
 
 print(soup.find_all(name="h3", class_="heading")) # in order to avoid class reserve keyword, it is `class_` instead
