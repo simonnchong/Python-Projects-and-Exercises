@@ -1,0 +1,10 @@
+# this is just an example, you will get this once you execute the program
+
+{
+    "access_token": "BQB7dfgbm63hyXoK5VKOnghjvTJLPCyjcmyFrC2OcqYMxtwHxeBk9f3Q8bJ70fr6gAEUBhRKC1PoyECn1HJOGZFHuyk74vNzq2gLT9vRwdDXDI4x7Kt4Q2P_lFcH6NvjKpWtzsOffdxDXN0lepU74MHKfrmWPYkvXw8_fioQRZx7IObov31GHK2D8kptPFi13v5wubIB7j2M8YwlsNMo4v7N-ws52DhWq67FTfovqGGA", 
+    "token_type": "Bearer", 
+    "expires_in": 3600, 
+    "refresh_token": "AQA9qpmX8d46hH53ghjghjeZazIUKINtD-a_jF91EAzgSyWsZqP-aWvWHCM4fi31kZ3e86kbUcR9HXY0YeHL1BAELbBIdvsS4DalUGx93ubyTuQt87y-qjZxLJcO_calVWgQZfICM", 
+    "scope": "playlist-modify-private", 
+    "expires_at": 1661590342
+}
