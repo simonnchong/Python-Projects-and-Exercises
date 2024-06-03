@@ -14,6 +14,6 @@ names = names_string.split(", ")
 total_participant = len(names)
 
 random_number = random.randint(0, total_participant-1)
-who_pay_for_the_meal = names[random_number];
+who_pay_for_the_meal = names[random_number]
 
 print(who_pay_for_the_meal + " is going to buy the meal today!")
