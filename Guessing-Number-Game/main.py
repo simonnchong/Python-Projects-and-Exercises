@@ -19,7 +19,7 @@ number_of_attempts = 0
 random_number = randint(1,100)
 
 print("Welcome to Simon's Guessing Number Game!")
-print("I'm think of a number between 1 and 100")
+print("I'm thinking of a number between 1 and 100")
 print(f"The answer is {random_number}")
 
 def difficulty_level():
